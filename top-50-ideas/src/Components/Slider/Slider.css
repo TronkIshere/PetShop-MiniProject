@@ -1,0 +1,126 @@
+.App {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.max-w-lg {
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+}
+
+.slider-container {
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  bottom: 114px;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+  top: -6px;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bg-white\/80 {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.text-gray-800 {
+  color: #2d3748;
+}
+
+.hover\:bg-white:hover {
+  background-color: #ffffff;
+}
+
+.bottom-4 {
+  bottom: 1rem;
+  left: 385px;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.h-3 {
+  height: 0.75rem;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.slider-transition {
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.arrow-btn {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
