@@ -1,24 +1,10 @@
-// Example vite.config.js
 import { defineConfig } from 'vite';
+import reactRefresh from '@vitejs/plugin-react-refresh';
+import { sassPlugin } from 'vite-plugin-sass';
 
 export default defineConfig({
-  // Other config options...
-  resolve: {
-    alias: {
-      // Optionally configure aliases for paths
-      '@assets': '/src/assets',
-    },
-  },
   plugins: [
-    // Example plugin configuration for handling images
-    // Modify as per your project needs
-    {
-      name: 'image-import-plugin',
-      handleHotUpdate({ file }) {
-        if (file.match(/\.jpg$/)) {
-          // Handle image hot updates if necessary
-        }
-      },
-    },
+    reactRefresh(),
+    sassPlugin(),
   ],
 });

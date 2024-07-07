@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import { ROUTERS } from "./Utils/Router";
-import HomePage from './Pages/Users/homePage';
+import HomePage from './Pages/Users/homePage/HomePage';
 import ProfilePage from './Pages/Users/ProfilePage';
 import MasterLayout from './Pages/Users/theme/masterLayout';
 
