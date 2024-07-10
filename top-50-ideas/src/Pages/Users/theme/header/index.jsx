@@ -7,7 +7,9 @@ import {    AiOutlineFacebook,
             AiOutlineGlobal, 
             AiOutlineUser, 
             AiOutlineMail, 
-            AiOutlineShoppingCart 
+            AiOutlineShoppingCart,
+            AiOutlineMenu,
+            AiOutlinePhone 
         } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import { ROUTERS } from '../../../../Utils/Router';
@@ -19,8 +21,8 @@ const formatter = (value) => {
 
 
 const Header = () => {
-
-    const [menus, setMenus] = useState([
+    const [isShowCategories, setShowCategories] = useState(true);
+    const [menus] = useState([
         {
             name: "TRANG CHỦ",
             path: ROUTERS.USER.HOME,
@@ -123,9 +125,18 @@ const Header = () => {
                                     menus?.map((menu, menuKey) => (
                                         <li key={menuKey} className={menuKey === 0 ? "active" : ""}>
                                            <Link to={menu?.path}>{menu?.name}</Link> 
+                                           {
+                                            menu.child && (
+                                                <ul className="header__menu__dropdown">
+                                                    {menu.child.map((childItem, childKey) => (
+                                                        <li key={`${menuKey}-${childKey}`}>
+                                                            <Link to={childItem.path}>{childItem.name}</Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
                                         </li>
-                                    ))
-                                }
+                                    ))}
                                 {/* <li>
                                     <ul>
                                         <li>Chó Poodle</li>
@@ -149,6 +160,71 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="container">
+                <div className="row categories_container">
+                    <div className="col-lg-3 categories">
+                        <div className="categories_all" onClick = {() => setShowCategories(!isShowCategories)}>
+                            <AiOutlineMenu />
+                            DANH MỤC SẢN PHẨM
+                        </div>
+                        {isShowCategories && (
+                            <ul className={isShowCategories ? "" : "hidden"}>
+                                <li>
+                                    <Link to={"#"}>Danh Mục Cún</Link>
+                                </li>
+                                <li>
+                                    <Link to={"#"}>Danh Mục Mèo</Link>
+                                </li>
+                                <li>
+                                    <Link to={"#"}>Dịch Vụ</Link>
+                                </li>
+                                <li>
+                                    <Link to={"#"}>Mỹ Phẩm & Làm Đẹp</Link>
+                                </li>
+                                <li>
+                                    <Link to={"#"}>Phụ Kiện</Link>
+                                </li>
+                                <li>
+                                    <Link to={"#"}>Thực Phẩm</Link>
+                                </li>
+                            </ul>
+                        )}
+                        
+                    </div>
+                    <div className="col-lg-9 search_container">
+                        <div className="search">
+                            <div className="search__form">
+                                <form>
+                                    <input type="text" placeholder="Bạn đang tìm gì?"/>
+                                    <button type="submit">Tìm kiếm</button>
+                                </form>
+                            </div>
+                            <div className="search__phone">
+                                <div className="search__phone__icon">
+                                    <AiOutlinePhone />
+                                </div>
+                                <div className="search__phone__text">
+                                    <p>0798.886.942</p>
+                                    <span>Hỗ trợ 24/7</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="item">
+                            <div className="text">
+                                <span>Trả góp với thẻ tín dụng</span>
+                                <h2>
+                                    Kỳ hạn linh hoạt <br />
+                                    3-6-9-12 tháng
+                                </h2>
+                                <p>Thủ tục nhanh chóng dễ dàng</p>
+                                <Link to="" className="primary-btn">
+                                    Mua ngay
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
             </div>
         </>
     );
